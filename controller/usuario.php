@@ -147,6 +147,20 @@
                 echo $html;
             }
             break;
+
+            case "combo_usu":
+                $datos = $usuario->get_all_usuario();
+                $html="";
+                $html.="<option label='Seleccionar'></option>";
+                if(is_array($datos)==true and count($datos)>0){
+                    foreach($datos as $row)
+                    {
+                        $html.= "<option value='".$row['usu_id']."'>".$row['usu_nom']."</option>";
+                    }
+                    echo $html;
+                }
+                break;
+        
         /* Controller para actualizar contraseña */
         case "password":
             $usuario->update_usuario_pass($_POST["usu_id"],$_POST["usu_pass"]);

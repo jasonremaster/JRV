@@ -95,7 +95,11 @@ $(document).ready(function(){
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
         }     
-    }).DataTable(); 
+    }).DataTable();
+    
+    $.post("../../controller/usuario.php?op=combo_usu",function(data, status){
+        $('#jrv_usu').html(data);
+    });
 });
 
 function editar(jrv_id){
@@ -107,7 +111,9 @@ function editar(jrv_id){
         $('#jrv_nom').val(data.jrv_nom);
         $('#jrv_cant').val(data.jrv_cant);
         $('#jrv_usu').val(data.jrv_usu);
+        console.log(data.jrv_usu);
         $('#sex_id').val(data.sex_id).trigger('change');
+        console.log(data.sex_id)
     }); 
 
     $('#modalmantenimiento').modal('show');
