@@ -13,7 +13,7 @@
                 $lid= $_POST["jrv_id"];
                 //variable para contar errores
                 //verificamos cedula
-                $nombre = $jrv->get_jrv_nombre($_POST["jrv_nombre"]);
+                $nombre = $jrv->get_jrv_nombre($_POST["jrv_nom"]);
                 if(count($nombre)==0){
                     
                     $nom =true;
@@ -51,7 +51,7 @@
                 $sub_array[] = $row["jrv_nom"];
                 $sub_array[] = $row["jrv_cant"];
                 $sub_array[] = $usuario->get_name_x_id($row["jrv_usu"]);
-                $sub_array[] =($row["jrv_sexo"] == "1") ? "Masculino" : "Femenino";
+                $sub_array[] =($row["jrv_sexo"] == "1") ? "Femenino" : "Masculino";
             
                 $sub_array[] = '<button type="button" onClick="editar('.$row["jrv_id"].');"  id="'.$row["jrv_id"].'" class="btn btn-inline btn-warning btn-sm ladda-button"><i class="fa fa-edit"></i></button>';
                 $sub_array[] = '<button type="button" onClick="eliminar('.$row["jrv_id"].');"  id="'.$row["jrv_id"].'" class="btn btn-inline btn-danger btn-sm ladda-button"><i class="fa fa-trash"></i></button>';
@@ -79,7 +79,7 @@
                     $output["jrv_nom"] = $row["jrv_nom"];
                     $output["jrv_cant"] = $row["jrv_cant"];
                     $output["jrv_usu"] = $row["jrv_usu"];
-                    $output["jrv_sexo"] = $row["jrv_sexo"];
+                    $output["sex_id"] = $row["jrv_sexo"];
                 }
                 echo json_encode($output);
             }

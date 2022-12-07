@@ -9,7 +9,7 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="usu_id" name="usu_id">
+                    <input type="hidden" id="jrv_id" name="jrv_id">
 
                     <div class="form-group">
                         <label class="form-label" for="jrv_nom">Nombre junta</label>
@@ -21,16 +21,20 @@
                         <input type="text" class="form-control" id="jrv_cant" name="jrv_cant" placeholder="Ingrese Apellido" required>
                     </div>
 
+                    
                     <div class="form-group">
-                        <label class="form-label" for="jrv_usu">Usuario Asignado</label>
-                        <input type="text" class="form-control" id="jrv_usu" name="jrv_usu" placeholder="JUAN PEREZ" required>
+                        <label class="form-label" for="jrv_usu">USUARIO</label>
+                        <select class="select2" id="jrv_usu" name="jrv_usu">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="sex_id">TIPO</label>
                         <select class="select2" id="sex_id" name="sex_id">
-                            <option value="1">Masculino</option>
-                            <option value="2">Femenino</option>
+                            <option value="0">Masculino</option>
+                            <option value="1">Femenino</option>
                         </select>
                     </div>
 

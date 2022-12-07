@@ -192,6 +192,16 @@
             return $resultado=$sql->fetchAll();
         }
 
+         ///FOR JRV
+         public function get_all_usuario(){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM tm_usuario";
+            $sql=$conectar->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+         }
+
 
         /* TODO: Total de registros segun usu_id */
         public function get_usuario_total_x_id($usu_id){
